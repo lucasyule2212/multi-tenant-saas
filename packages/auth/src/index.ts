@@ -8,7 +8,7 @@ import {
 import { User } from './models/user'
 import { permissions } from './permissions'
 import { ProjectSubject } from './subjects/project'
-import { UserSubject } from './subjects/User'
+import { UserSubject } from './subjects/user'
 
 type AppAbilities = UserSubject | ProjectSubject | ['manage', 'all']
 

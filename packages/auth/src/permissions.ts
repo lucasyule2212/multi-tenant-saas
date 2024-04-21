@@ -1,9 +1,11 @@
 import { AbilityBuilder } from '@casl/ability'
+import { z } from 'zod'
 
 import { AppAbility } from '.'
 import { User } from './models/user'
+import { roleSchema } from './roles'
 
-export type Role = 'ADMIN' | 'MEMBER'
+export type Role = z.infer<typeof roleSchema>
 
 type PermissionsByRole = (
   user: User,
@@ -18,4 +20,5 @@ export const permissions: Record<Role, PermissionsByRole> = {
     can('invite', 'User')
     can('manage', 'Project')
   },
+  BILLING: () => {},
 }
