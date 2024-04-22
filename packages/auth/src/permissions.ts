@@ -15,6 +15,9 @@ type PermissionsByRole = (
 export const permissions: Record<Role, PermissionsByRole> = {
   ADMIN: (_, { can }) => {
     can('manage', 'all')
+    can('delete', 'User', {
+      role: { $ne: 'ADMIN' },
+    })
   },
   MEMBER: (user, { can }) => {
     can('invite', 'User')
