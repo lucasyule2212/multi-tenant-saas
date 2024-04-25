@@ -2,10 +2,14 @@
   "name": "@repo/api",
   "version": "0.0.0",
   "scripts": {
-    "dev":"tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "dependencies": {
-    "@repo/auth": "workspace:*"
+    "@fastify/cors": "^9.0.1",
+    "@repo/auth": "workspace:*",
+    "fastify": "^4.26.2",
+    "fastify-type-provider-zod": "^1.1.9",
+    "zod": "^3.22.5"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
