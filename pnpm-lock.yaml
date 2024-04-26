@@ -10,7 +10,7 @@ importers:
     devDependencies:
       turbo:
         specifier: latest
-        version: 1.13.2
+        version: 1.13.3
 
   apps/api:
     dependencies:
@@ -42,6 +42,9 @@ importers:
       '@types/node':
         specifier: ^20.12.7
         version: 20.12.7
+      prisma:
+        specifier: ^5.13.0
+        version: 5.13.0
       tsx:
         specifier: ^4.7.2
         version: 4.7.2
@@ -427,6 +430,38 @@ packages:
   /@pkgr/core@0.1.1:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+    dev: true
+
+  /@prisma/debug@5.13.0:
+    resolution: {integrity: sha512-699iqlEvzyCj9ETrXhs8o8wQc/eVW+FigSsHpiskSFydhjVuwTJEfj/nIYqTaWFYuxiWQRfm3r01meuW97SZaQ==}
+    dev: true
+
+  /@prisma/engines-version@5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b:
+    resolution: {integrity: sha512-AyUuhahTINGn8auyqYdmxsN+qn0mw3eg+uhkp8zwknXYIqoT3bChG4RqNY/nfDkPvzWAPBa9mrDyBeOnWSgO6A==}
+    dev: true
+
+  /@prisma/engines@5.13.0:
+    resolution: {integrity: sha512-hIFLm4H1boj6CBZx55P4xKby9jgDTeDG0Jj3iXtwaaHmlD5JmiDkZhh8+DYWkTGchu+rRF36AVROLnk0oaqhHw==}
+    requiresBuild: true
+    dependencies:
+      '@prisma/debug': 5.13.0
+      '@prisma/engines-version': 5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b
+      '@prisma/fetch-engine': 5.13.0
+      '@prisma/get-platform': 5.13.0
+    dev: true
+
+  /@prisma/fetch-engine@5.13.0:
+    resolution: {integrity: sha512-Yh4W+t6YKyqgcSEB3odBXt7QyVSm0OQlBSldQF2SNXtmOgMX8D7PF/fvH6E6qBCpjB/yeJLy/FfwfFijoHI6sA==}
+    dependencies:
+      '@prisma/debug': 5.13.0
+      '@prisma/engines-version': 5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b
+      '@prisma/get-platform': 5.13.0
+    dev: true
+
+  /@prisma/get-platform@5.13.0:
+    resolution: {integrity: sha512-B/WrQwYTzwr7qCLifQzYOmQhZcFmIFhR81xC45gweInSUn2hTEbfKUPd2keAog+y5WI5xLAFNJ3wkXplvSVkSw==}
+    dependencies:
+      '@prisma/debug': 5.13.0
     dev: true
 
   /@rocketseat/eslint-config@2.2.2(eslint@8.57.0)(typescript@5.4.5):
@@ -2525,6 +2560,15 @@ packages:
     hasBin: true
     dev: true
 
+  /prisma@5.13.0:
+    resolution: {integrity: sha512-kGtcJaElNRAdAGsCNykFSZ7dBKpL14Cbs+VaQ8cECxQlRPDjBlMHNFYeYt0SKovAVy2Y65JXQwB3A5+zIQwnTg==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 5.13.0
+    dev: true
+
   /process-warning@3.0.0:
     resolution: {integrity: sha512-mqn0kFRl0EoqhnL0GQ0veqFHyIN1yig9RHh/InzORTUiZHFRAur+aMtRkELNwGs9aNwKS6tg/An4NYBPGwvtzQ==}
     dev: false
@@ -2924,64 +2968,64 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /turbo-darwin-64@1.13.2:
-    resolution: {integrity: sha512-CCSuD8CfmtncpohCuIgq7eAzUas0IwSbHfI8/Q3vKObTdXyN8vAo01gwqXjDGpzG9bTEVedD0GmLbD23dR0MLA==}
+  /turbo-darwin-64@1.13.3:
+    resolution: {integrity: sha512-glup8Qx1qEFB5jerAnXbS8WrL92OKyMmg5Hnd4PleLljAeYmx+cmmnsmLT7tpaVZIN58EAAwu8wHC6kIIqhbWA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64@1.13.2:
-    resolution: {integrity: sha512-0HySm06/D2N91rJJ89FbiI/AodmY8B3WDSFTVEpu2+8spUw7hOJ8okWOT0e5iGlyayUP9gr31eOeL3VFZkpfCw==}
+  /turbo-darwin-arm64@1.13.3:
+    resolution: {integrity: sha512-/np2xD+f/+9qY8BVtuOQXRq5f9LehCFxamiQnwdqWm5iZmdjygC5T3uVSYuagVFsZKMvX3ycySwh8dylGTl6lg==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64@1.13.2:
-    resolution: {integrity: sha512-7HnibgbqZrjn4lcfIouzlPu8ZHSBtURG4c7Bedu7WJUDeZo+RE1crlrQm8wuwO54S0siYqUqo7GNHxu4IXbioQ==}
+  /turbo-linux-64@1.13.3:
+    resolution: {integrity: sha512-G+HGrau54iAnbXLfl+N/PynqpDwi/uDzb6iM9hXEDG+yJnSJxaHMShhOkXYJPk9offm9prH33Khx2scXrYVW1g==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64@1.13.2:
-    resolution: {integrity: sha512-sUq4dbpk6SNKg/Hkwn256Vj2AEYSQdG96repio894h5/LEfauIK2QYiC/xxAeW3WBMc6BngmvNyURIg7ltrePg==}
+  /turbo-linux-arm64@1.13.3:
+    resolution: {integrity: sha512-qWwEl5VR02NqRyl68/3pwp3c/olZuSp+vwlwrunuoNTm6JXGLG5pTeme4zoHNnk0qn4cCX7DFrOboArlYxv0wQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64@1.13.2:
-    resolution: {integrity: sha512-DqzhcrciWq3dpzllJR2VVIyOhSlXYCo4mNEWl98DJ3FZ08PEzcI3ceudlH6F0t/nIcfSItK1bDP39cs7YoZHEA==}
+  /turbo-windows-64@1.13.3:
+    resolution: {integrity: sha512-Nudr4bRChfJzBPzEmpVV85VwUYRCGKecwkBFpbp2a4NtrJ3+UP1VZES653ckqCu2FRyRuS0n03v9euMbAvzH+Q==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64@1.13.2:
-    resolution: {integrity: sha512-WnPMrwfCXxK69CdDfS1/j2DlzcKxSmycgDAqV0XCYpK/812KB0KlvsVAt5PjEbZGXkY88pCJ1BLZHAjF5FcbqA==}
+  /turbo-windows-arm64@1.13.3:
+    resolution: {integrity: sha512-ouJCgsVLd3icjRLmRvHQDDZnmGzT64GBupM1Y+TjtYn2LVaEBoV6hicFy8x5DUpnqdLy+YpCzRMkWlwhmkX7sQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo@1.13.2:
-    resolution: {integrity: sha512-rX/d9f4MgRT3yK6cERPAkfavIxbpBZowDQpgvkYwGMGDQ0Nvw1nc0NVjruE76GrzXQqoxR1UpnmEP54vBARFHQ==}
+  /turbo@1.13.3:
+    resolution: {integrity: sha512-n17HJv4F4CpsYTvKzUJhLbyewbXjq1oLCi90i5tW1TiWDz16ML1eDG7wi5dHaKxzh5efIM56SITnuVbMq5dk4g==}
     hasBin: true
     optionalDependencies:
-      turbo-darwin-64: 1.13.2
-      turbo-darwin-arm64: 1.13.2
-      turbo-linux-64: 1.13.2
-      turbo-linux-arm64: 1.13.2
-      turbo-windows-64: 1.13.2
-      turbo-windows-arm64: 1.13.2
+      turbo-darwin-64: 1.13.3
+      turbo-darwin-arm64: 1.13.3
+      turbo-linux-64: 1.13.3
+      turbo-linux-arm64: 1.13.3
+      turbo-windows-64: 1.13.3
+      turbo-windows-arm64: 1.13.3
     dev: true
 
   /type-check@0.4.0:
