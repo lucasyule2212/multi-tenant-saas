@@ -28,5 +28,8 @@
       "@repo/eslint-config/node"
     ]
   },
-  "prettier": "@repo/prettier-config"
+  "prettier": "@repo/prettier-config",
+  "prisma":{
+    "seed": "tsx prisma/seed.ts"
+  }
 }
