@@ -1,6 +1,8 @@
 import fastifyCors from '@fastify/cors'
+import fastifySwagger from '@fastify/swagger'
 import { fastify } from 'fastify'
 import {
+  jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler,
   ZodTypeProvider,
@@ -13,6 +15,18 @@ app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 
 app.register(fastifyCors)
+
+app.register(fastifySwagger, {
+  openapi: {
+    info: {
+      title: 'Next.js SaaS',
+      description: 'Full-stack SaaS with multi-tenant and RBAC.',
+      version: '1.0.0',
+    },
+    servers: [],
+  },
+  transform: jsonSchemaTransform,
+})
 
 app.listen({ port: 3333 }).then(() => {
   console.log('Server is running on port 3333')
