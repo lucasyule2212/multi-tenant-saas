@@ -1,5 +1,7 @@
 import { app } from '../server'
-// ? Import the routes
+import { authenticateWithPassword } from './auth/authenticate-with-password'
 import { createAccount } from './auth/create-account'
+// ? Import the routes
 
 app.register(createAccount)
+app.register(authenticateWithPassword)
