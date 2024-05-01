@@ -10,8 +10,12 @@ import {
   ZodTypeProvider,
 } from 'fastify-type-provider-zod'
 
+import { errorHandler } from './error-handler'
+
 // ? Fastify instance with Zod validation and serialization
 const app = fastify().withTypeProvider<ZodTypeProvider>()
+
+app.setErrorHandler(errorHandler)
 
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
