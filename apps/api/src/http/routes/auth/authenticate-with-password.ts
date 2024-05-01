@@ -17,12 +17,12 @@ export async function authenticateWithPassword(app: FastifyInstance) {
           password: z.string().min(8),
         }),
         response: {
-          400: {
+          400: z.object({
             message: z.string(),
-          },
-          201: {
+          }),
+          201: z.object({
             token: z.string(),
-          },
+          }),
         },
       },
     },
