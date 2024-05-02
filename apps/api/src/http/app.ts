@@ -2,6 +2,7 @@ import fastifyCors from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUI from '@fastify/swagger-ui'
+import { env } from '@repo/env'
 import { fastify } from 'fastify'
 import {
   jsonSchemaTransform,
@@ -47,7 +48,7 @@ app.register(fastifySwaggerUI, {
 })
 
 app.register(fastifyJwt, {
-  secret: 'my-supersecret',
+  secret: env.JWT_SECRET,
 })
 
 export { app }

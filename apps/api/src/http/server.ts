@@ -1,10 +1,12 @@
 import '@/http/routes/routes'
 
+import { env } from '@repo/env'
+
 import { app } from './app'
 
 app
   .listen({
-    port: 3333,
+    port: env.SERVER_PORT,
     host: '0.0.0.0',
   })
   .then((address) => {
