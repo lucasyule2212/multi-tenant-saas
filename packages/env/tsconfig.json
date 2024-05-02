@@ -1,0 +1,7 @@
+// Package config made to be used both in backend and frontend
+{
+  "extends": "@repo/tsconfig/library.json",
+  "include": [
+    "index.ts"
+  ]
+}
