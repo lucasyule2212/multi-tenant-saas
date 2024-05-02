@@ -1,4 +1,4 @@
-import { app } from '../server'
+import { app } from '../app'
 import { authenticateWithPassword } from './auth/authenticate-with-password'
 import { createAccount } from './auth/create-account'
 import { getUserProfile } from './auth/get-user-profile'
