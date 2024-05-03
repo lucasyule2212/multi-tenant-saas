@@ -5,6 +5,7 @@ import { createAccount } from './auth/create-account'
 import { getUserProfile } from './auth/get-user-profile'
 import { requestPasswordRecover } from './auth/request-password-recover'
 import { resetUserPassword } from './auth/reset-user-password'
+import { createOrganization } from './orgs/create-organization'
 // ? Import the routes
 
 // Create account
@@ -20,3 +21,6 @@ app.register(getUserProfile)
 // User password
 app.register(requestPasswordRecover)
 app.register(resetUserPassword)
+
+// Organizations
+app.register(createOrganization)
