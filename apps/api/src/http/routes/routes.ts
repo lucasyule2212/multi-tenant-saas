@@ -6,6 +6,7 @@ import { getUserProfile } from './auth/get-user-profile'
 import { requestPasswordRecover } from './auth/request-password-recover'
 import { resetUserPassword } from './auth/reset-user-password'
 import { createOrganization } from './orgs/create-organization'
+import { getUserMembership } from './orgs/get-membership'
 // ? Import the routes
 
 // Create account
@@ -24,3 +25,4 @@ app.register(resetUserPassword)
 
 // Organizations
 app.register(createOrganization)
+app.register(getUserMembership)
