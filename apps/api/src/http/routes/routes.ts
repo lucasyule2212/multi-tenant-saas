@@ -8,6 +8,7 @@ import { resetUserPassword } from './auth/reset-user-password'
 import { createOrganization } from './orgs/create-organization'
 import { getUserMembership } from './orgs/get-membership'
 import { getOrganization } from './orgs/get-organization'
+import { getOrganizations } from './orgs/get-organizations'
 // ? Import the routes
 
 // Create account
@@ -28,3 +29,4 @@ app.register(resetUserPassword)
 app.register(createOrganization)
 app.register(getUserMembership)
 app.register(getOrganization)
+app.register(getOrganizations)
