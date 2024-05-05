@@ -9,6 +9,7 @@ import { createOrganization } from './orgs/create-organization'
 import { getUserMembership } from './orgs/get-membership'
 import { getOrganization } from './orgs/get-organization'
 import { getOrganizations } from './orgs/get-organizations'
+import { updateOrganization } from './orgs/update-organization'
 // ? Import the routes
 
 // Create account
@@ -30,3 +31,4 @@ app.register(createOrganization)
 app.register(getUserMembership)
 app.register(getOrganization)
 app.register(getOrganizations)
+app.register(updateOrganization)
