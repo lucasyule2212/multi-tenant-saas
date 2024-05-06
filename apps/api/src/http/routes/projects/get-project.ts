@@ -59,9 +59,7 @@ export async function getProject(app: FastifyInstance) {
         const { cannot } = defineAbilityFor(authUser)
 
         if (cannot('get', 'Project')) {
-          throw new UnauthorizedError(
-            'You are not allowed to delete this project',
-          )
+          throw new UnauthorizedError('You are not allowed to see this project')
         }
 
         const project = await prisma.project.findUnique({
