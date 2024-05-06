@@ -14,6 +14,7 @@ import { transferOrganization } from './orgs/transfer-organization'
 import { updateOrganization } from './orgs/update-organization'
 import { createProject } from './projects/create-project'
 import { deleteProject } from './projects/delete-project'
+import { getProject } from './projects/get-project'
 // ? Import the routes
 
 // Create account
@@ -42,3 +43,4 @@ app.register(transferOrganization)
 // Projects
 app.register(createProject)
 app.register(deleteProject)
+app.register(getProject)
