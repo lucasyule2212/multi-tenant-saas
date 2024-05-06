@@ -1,5 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
+import slugify from 'slugify'
 import z from 'zod'
 
 import { auth } from '@/http/middlewares/auth'
@@ -45,10 +46,12 @@ export async function createOrganization(app: FastifyInstance) {
           }
         }
 
+        const slugifyOrganizationName = slugify(name)
+
         const organization = await prisma.organization.create({
           data: {
             name,
-            slug: name.toLowerCase().replace(/ /g, '-'),
+            slug: slugifyOrganizationName,
             domain,
             shouldAttachUserByDomain,
             ownerId: userId,
