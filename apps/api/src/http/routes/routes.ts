@@ -5,6 +5,7 @@ import { createAccount } from './auth/create-account'
 import { getUserProfile } from './auth/get-user-profile'
 import { requestPasswordRecover } from './auth/request-password-recover'
 import { resetUserPassword } from './auth/reset-user-password'
+import { getMembers } from './members/get-members'
 import { createOrganization } from './orgs/create-organization'
 import { getUserMembership } from './orgs/get-membership'
 import { getOrganization } from './orgs/get-organization'
@@ -48,3 +49,6 @@ app.register(deleteProject)
 app.register(getProject)
 app.register(getProjectsList)
 app.register(updateProject)
+
+// Members
+app.register(getMembers)
