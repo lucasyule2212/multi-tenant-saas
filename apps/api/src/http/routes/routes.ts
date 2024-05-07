@@ -16,6 +16,7 @@ import { createProject } from './projects/create-project'
 import { deleteProject } from './projects/delete-project'
 import { getProject } from './projects/get-project'
 import { getProjectsList } from './projects/get-projects-list'
+import { updateProject } from './projects/update-project'
 // ? Import the routes
 
 // Create account
@@ -46,3 +47,4 @@ app.register(createProject)
 app.register(deleteProject)
 app.register(getProject)
 app.register(getProjectsList)
+app.register(updateProject)
