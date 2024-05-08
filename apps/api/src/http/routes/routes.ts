@@ -10,6 +10,7 @@ import { createInvite } from './invites/create-invite'
 import { getInvite } from './invites/get-invite'
 import { getInvites } from './invites/get-invites'
 import { rejectInvite } from './invites/reject-invite'
+import { revokeInvite } from './invites/revoke-invite'
 import { getMembers } from './members/get-members'
 import { removeMember } from './members/remove-member'
 import { updateMember } from './members/update-members'
@@ -68,3 +69,4 @@ app.register(getInvite)
 app.register(getInvites)
 app.register(acceptInvite)
 app.register(rejectInvite)
+app.register(revokeInvite)
