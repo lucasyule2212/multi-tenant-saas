@@ -5,6 +5,7 @@ import { createAccount } from './auth/create-account'
 import { getUserProfile } from './auth/get-user-profile'
 import { requestPasswordRecover } from './auth/request-password-recover'
 import { resetUserPassword } from './auth/reset-user-password'
+import { getOrganizationBilling } from './billing/get-organization-billing'
 import { acceptInvite } from './invites/accept-invite'
 import { createInvite } from './invites/create-invite'
 import { getInvite } from './invites/get-invite'
@@ -72,3 +73,6 @@ app.register(acceptInvite)
 app.register(rejectInvite)
 app.register(revokeInvite)
 app.register(getPendingInvites)
+
+// Billing
+app.register(getOrganizationBilling)
