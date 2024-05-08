@@ -5,6 +5,7 @@ import { createAccount } from './auth/create-account'
 import { getUserProfile } from './auth/get-user-profile'
 import { requestPasswordRecover } from './auth/request-password-recover'
 import { resetUserPassword } from './auth/reset-user-password'
+import { acceptInvite } from './invites/accept-invite'
 import { createInvite } from './invites/create-invite'
 import { getInvite } from './invites/get-invite'
 import { getInvites } from './invites/get-invites'
@@ -64,3 +65,4 @@ app.register(removeMember)
 app.register(createInvite)
 app.register(getInvite)
 app.register(getInvites)
+app.register(acceptInvite)
