@@ -9,6 +9,7 @@ import { acceptInvite } from './invites/accept-invite'
 import { createInvite } from './invites/create-invite'
 import { getInvite } from './invites/get-invite'
 import { getInvites } from './invites/get-invites'
+import { rejectInvite } from './invites/reject-invite'
 import { getMembers } from './members/get-members'
 import { removeMember } from './members/remove-member'
 import { updateMember } from './members/update-members'
@@ -66,3 +67,4 @@ app.register(createInvite)
 app.register(getInvite)
 app.register(getInvites)
 app.register(acceptInvite)
+app.register(rejectInvite)
