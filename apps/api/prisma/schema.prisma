@@ -40,7 +40,7 @@ model Token {
   type      TokenType
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime  @default(now()) @updatedAt @map("updated_at")
-  user      User      @relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String    @map("user_id")
 
   @@map("tokens")
@@ -54,7 +54,7 @@ model Account {
   id                String          @id @default(uuid())
   provider          AccountProvider
   providerAccountID String          @unique @map("provider_account_id")
-  user              User            @relation(fields: [userId], references: [id])
+  user              User            @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId            String          @map("user_id")
 
   // this is a unique constraint that says that the combination of provider and userId must be unique
@@ -75,10 +75,10 @@ model Invite {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
 
-  author   User?   @relation(fields: [authorId], references: [id])
+  author   User?   @relation(fields: [authorId], references: [id], onDelete: SetNull)
   authorId String? @map("author_id")
 
-  organization   Organization @relation(fields: [organizationId], references: [id])
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   organizationId String
 
   @@unique([email, organizationId])
@@ -89,10 +89,10 @@ model Invite {
 model Member {
   id             String       @id @default(uuid())
   role           Role         @default(MEMBER)
-  organization   Organization @relation(fields: [organizationId], references: [id])
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   organizationId String
 
-  user   User   @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String
 
   @@unique([organizationId, userId])
@@ -129,7 +129,7 @@ model Project {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
 
-  organization   Organization @relation(fields: [organizationId], references: [id])
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   organizationId String
 
   owner   User   @relation(fields: [ownerId], references: [id])
