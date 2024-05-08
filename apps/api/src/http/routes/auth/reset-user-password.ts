@@ -38,14 +38,21 @@ export async function resetUserPassword(app: FastifyInstance) {
 
       const passwordHash = await hash(newPassword, 6)
 
-      await prisma.user.update({
-        where: {
-          id: token.userId,
-        },
-        data: {
-          passwordHash,
-        },
-      })
+      await prisma.$transaction([
+        prisma.user.update({
+          where: {
+            id: token.userId,
+          },
+          data: {
+            passwordHash,
+          },
+        }),
+        prisma.token.delete({
+          where: {
+            id: code,
+          },
+        }),
+      ])
 
       // ? 204 is the status for successful requests with no content
       return reply.status(204).send()
